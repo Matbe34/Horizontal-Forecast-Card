@@ -18,7 +18,13 @@ A modern, responsive horizontal weather forecast card for Home Assistant Lovelac
 
 ## 🖼️ Preview
 
-![Horizontal Forecast Card Preview](https://via.placeholder.com/800x200/1a1a1a/ffffff?text=Horizontal+Forecast+Card+Preview)
+![Horizontal Forecast Card Preview](images/preview.png)
+
+### Desktop View
+![Desktop View](images/desktop-view.png)
+
+### Mobile View  
+![Mobile View](images/mobile-view.png)
 
 ## 🚀 Installation
 

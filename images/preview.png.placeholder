@@ -1,0 +1,13 @@
+# This is a placeholder file for the main preview image
+# You need to replace this with an actual screenshot of your card
+# 
+# To create the image:
+# 1. Install your card in Home Assistant
+# 2. Configure it with a weather entity
+# 3. Take a screenshot showing the horizontal forecast
+# 4. Save as images/preview.png
+# 5. Delete this file
+#
+# Recommended size: 800x400 pixels
+# Format: PNG
+# Content: Show the card with weather icons, temperatures, and drag functionality
