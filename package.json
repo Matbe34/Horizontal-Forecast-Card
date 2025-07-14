@@ -1,6 +1,6 @@
 {
   "name": "horizontal-forecast-card",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A clean horizontal weather forecast card for Home Assistant Lovelace",
   "keywords": [
     "home-assistant",
