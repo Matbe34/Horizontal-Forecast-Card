@@ -1,5 +1,7 @@
 {
   "name": "Horizontal Forecast Card",
   "content_in_root": false,
-  "filename": "horizontal-forecast-card.js"
+  "filename": "horizontal-forecast-card.js",
+  "render_readme": true,
+  "iot_class": "Local Polling"
 }
