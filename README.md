@@ -3,6 +3,7 @@
 A modern, responsive horizontal weather forecast card for Home Assistant Lovelace UI with intuitive drag-to-scroll functionality.
 
 [![GitHub Release](https://img.shields.io/github/release/Matbe34/Horizontal-Forecast-Card.svg?style=for-the-badge)](https://github.com/Matbe34/Horizontal-Forecast-Card/releases)
+[![HACS](https://img.shields.io/badge/HACS-Custom-blue.svg?style=for-the-badge)](https://github.com/hacs/integration)
 [![License](https://img.shields.io/github/license/Matbe34/Horizontal-Forecast-Card.svg?style=for-the-badge)](LICENSE)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
 
