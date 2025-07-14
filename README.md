@@ -1,119 +1,193 @@
-# Boilerplate Card by [@iantrich](https://www.github.com/iantrich)
+# 🌤️ Horizontal Forecast Card
 
-A community driven boilerplate of best practices for Home Assistant Lovelace custom cards
+A modern, responsive horizontal weather forecast card for Home Assistant Lovelace UI with intuitive drag-to-scroll functionality.
 
-[![GitHub Release][releases-shield]][releases]
-[![License][license-shield]](LICENSE.md)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+[![GitHub Release](https://img.shields.io/github/release/Matbe34/Horizontal-Forecast-Card.svg?style=for-the-badge)](https://github.com/Matbe34/Horizontal-Forecast-Card/releases)
+[![License](https://img.shields.io/github/license/Matbe34/Horizontal-Forecast-Card.svg?style=for-the-badge)](LICENSE)
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
 
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
+## ✨ Features
 
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
+- **🌡️ Hourly Weather Display** - Temperature, conditions, and precipitation probability
+- **🖱️ Intuitive Drag-to-Scroll** - Smooth mouse and touch drag functionality  
+- **📱 Mobile Optimized** - Responsive design with perfect touch support
+- **⚡ Lightning Fast** - Local SVG icons for instant loading (no CDN dependency)
+- **🎨 Modern UI** - Clean design with visual separators and smooth animations
+- **🔄 Smart Caching** - Intelligent data caching with automatic refresh
+- **🌐 Cross-browser Compatible** - Works on all modern browsers
 
-## Support
+## 🖼️ Preview
 
-Hey dude! Help me out for a couple of :beers: or a :coffee:!
+![Horizontal Forecast Card Preview](https://via.placeholder.com/800x200/1a1a1a/ffffff?text=Horizontal+Forecast+Card+Preview)
 
-[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/zJtVxUAgH)
+## 🚀 Installation
 
-## Options
+### Method 1: HACS (Recommended)
 
-| Name              | Type    | Requirement  | Description                                 | Default             |
-| ----------------- | ------- | ------------ | ------------------------------------------- | ------------------- |
-| type              | string  | **Required** | `custom:boilerplate-card`                   |
-| name              | string  | **Optional** | Card name                                   | `Boilerplate`       |
-| show_error        | boolean | **Optional** | Show what an error looks like for the card  | `false`             |
-| show_warning      | boolean | **Optional** | Show what a warning looks like for the card | `false`             |
-| entity            | string  | **Optional** | Home Assistant entity ID.                   | `none`              |
-| tap_action        | object  | **Optional** | Action to take on tap                       | `action: more-info` |
-| hold_action       | object  | **Optional** | Action to take on hold                      | `none`              |
-| double_tap_action | object  | **Optional** | Action to take on double tap                | `none`              |
+1. Open HACS in your Home Assistant instance
+2. Go to "Frontend" section
+3. Click the "+" button and search for "Horizontal Forecast Card"
+4. Click "Install"
+5. Add the resource to your Lovelace configuration
 
-## Action Options
+### Method 2: Manual Installation
 
-| Name            | Type   | Requirement  | Description                                                                                                                            | Default     |
-| --------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| action          | string | **Required** | Action to perform (more-info, toggle, call-service, navigate url, none)                                                                | `more-info` |
-| navigation_path | string | **Optional** | Path to navigate to (e.g. /lovelace/0/) when action defined as navigate                                                                | `none`      |
-| url             | string | **Optional** | URL to open on click when action is url. The URL will open in a new tab                                                                | `none`      |
-| service         | string | **Optional** | Service to call (e.g. media_player.media_play_pause) when action defined as call-service                                               | `none`      |
-| service_data    | object | **Optional** | Service data to include (e.g. entity_id: media_player.bedroom) when action defined as call-service                                     | `none`      |
-| haptic          | string | **Optional** | Haptic feedback _success, warning, failure, light, medium, heavy, selection_ | `none`      |
-| repeat          | number | **Optional** | How often to repeat the `hold_action` in milliseconds.                                                                                 | `none`       |
-
-## Starting a new card from boilerplate-card
-
-### Step 1
-
-Click the "Use this template" button on the main page and clone the new repository to your machine
-
-### Step 2
-
-Install necessary modules (verified to work in node 8.x)
-`yarn install` or `npm install`
-
-### Step 3
-
-Do a test lint & build on the project. You can see available scripts in the package.json
-`npm run build`
-
-### Step 4
-
-Search the repository for all instances of "TODO" and handle the changes/suggestions
-
-### Step 5
-
-Customize to suit your needs and contribute it back to the community
-
-## Starting a new card from boilerplate-card with [devcontainer][devcontainer]
-
-Note: this is available only in vscode ensure you have the [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed.
-
-1. Fork and clone the repository.
-2. Open a [devcontainer][devcontainer] terminal and run `npm start` when it's ready.
-3. The compiled `.js` file will be accessible on
-   `http://127.0.0.1:5000/boilerplate-card.js`.
-4. On a running Home Assistant installation add this to your Lovelace
-   `resources:`
+1. Download the latest `horizontal-forecast-card.js` from [releases](https://github.com/Matbe34/Horizontal-Forecast-Card/releases)
+2. Copy the file to your `config/www/` directory
+3. Add the resource to your Lovelace configuration:
 
 ```yaml
-- url: 'http://127.0.0.1:5000/boilerplate-card.js'
-  type: module
+resources:
+  - url: /local/horizontal-forecast-card.js
+    type: module
 ```
 
-_Change "127.0.0.1" to the IP of your development machine._
+## 🔧 Configuration
 
-### Bonus
+### Basic Configuration
 
-If you need a fresh test instance you can install a fresh Home Assistant instance inside the devcontainer as well.
-
-1. Run the command `container start`.
-2. Home Assistant will install and will eventually be running on port `9123`
-
-## [Troubleshooting](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins)
-
-NB This will not work with node 9.x if you see the following errors try installing node 8.10.0
-
-```yarn install
-yarn install v1.3.2
-[1/4] 🔍  Resolving packages...
-warning rollup-plugin-commonjs@10.1.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-commonjs.
-[2/4] 🚚  Fetching packages...
-error @typescript-eslint/eslint-plugin@2.6.0: The engine "node" is incompatible with this module. Expected version "^8.10.0 || ^10.13.0 || >=11.10.1".
-error Found incompatible module
-info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+```yaml
+type: custom:horizontal-forecast-card
+entity: weather.your_weather_entity
 ```
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/custom-cards/boilerplate-card.svg?style=for-the-badge
-[commits]: https://github.com/custom-cards/boilerplate-card/commits/master
-[devcontainer]: https://code.visualstudio.com/docs/remote/containers
-[discord]: https://discord.gg/5e9yvq
-[discord-shield]: https://img.shields.io/discord/330944238910963714.svg?style=for-the-badge
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/c/projects/frontend
-[license-shield]: https://img.shields.io/github/license/custom-cards/boilerplate-card.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/custom-cards/boilerplate-card.svg?style=for-the-badge
-[releases]: https://github.com/custom-cards/boilerplate-card/releases
+### Advanced Configuration
+
+```yaml
+type: custom:horizontal-forecast-card
+entity: weather.your_weather_entity
+name: "Today's Forecast"
+hours_to_show: 24
+block_width: "80px"
+```
+
+### Configuration Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `entity` | string | **Required** | Weather entity ID (must be weather.* entity) |
+| `name` | string | `"Forecast"` | Card title displayed above forecast |
+| `hours_to_show` | number | `24` | Number of forecast hours to display (1-48) |
+| `block_width` | string | `"80px"` | Width of each forecast hour block |
+
+## 🎯 Usage
+
+### Desktop
+- **Click and drag** horizontally on the forecast bar to scroll
+- **Mouse wheel** over the forecast area to scroll
+- **Visual feedback** - cursor changes to indicate draggable area
+
+### Mobile
+- **Touch and swipe** horizontally to scroll through forecast
+- **Momentum scrolling** for smooth experience
+- **Optimized touch targets** for easy interaction
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 14+
+- npm or yarn
+
+### Setup
+```bash
+git clone https://github.com/Matbe34/Horizontal-Forecast-Card.git
+cd Horizontal-Forecast-Card
+npm install
+```
+
+### Development
+```bash
+npm run dev    # Start development server with hot reload
+npm run build  # Build production version
+npm run clean  # Clean build directory
+```
+
+### Project Structure
+```
+├── src/
+│   ├── horizontal-forecast-card.ts    # Main component
+│   ├── types.ts                      # TypeScript definitions
+│   ├── weather-icons.ts              # Local SVG icons
+│   └── icons/                        # SVG icon files
+├── dist/                             # Production build
+├── package.json                      # Dependencies & scripts
+└── hacs.json                         # HACS configuration
+```
+
+## 🔄 Supported Weather Entities
+
+This card works with any Home Assistant weather entity that provides forecast data:
+
+- **OpenWeatherMap** (`weather.openweathermap`)
+- **Met.no** (`weather.met_no`)
+- **AccuWeather** (`weather.accuweather`)
+- **Dark Sky** (`weather.darksky`)
+- **Buienradar** (`weather.buienradar`)
+- **Netatmo** (`weather.netatmo`)
+- **Weather Underground** (`weather.wunderground`)
+- **Custom integrations** with forecast support
+
+## 🐛 Troubleshooting
+
+### Card Not Loading
+- Verify the weather entity exists in **Developer Tools > States**
+- Check that the entity ID starts with `weather.`
+- Ensure the resource is properly added to Lovelace resources
+- Check browser console for error messages
+
+### Drag Not Working
+- Ensure you're clicking/touching the forecast area (not header)
+- Try refreshing the page
+- Check if the forecast has enough hours to scroll
+- Verify the card has properly rendered
+
+### No Forecast Data
+- Confirm your weather entity provides forecast data
+- Check if the weather integration is properly configured
+- Some entities require specific configuration for forecast data
+
+### Performance Issues
+- Reduce `hours_to_show` if experiencing lag
+- Increase `block_width` for better touch targets
+- Check browser performance tools for bottlenecks
+
+## 📝 Changelog
+
+### v1.0.0
+- ✅ Initial production release
+- ✅ Drag-to-scroll functionality
+- ✅ Local SVG icons for fast loading
+- ✅ Responsive design with mobile support
+- ✅ Smart caching and auto-refresh
+- ✅ Cross-browser compatibility
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [LitElement](https://lit-element.polymer-project.org/)
+- Uses [Home Assistant Custom Card Helpers](https://github.com/custom-cards/custom-card-helpers)
+- Weather icons adapted from various open-source collections
+
+## 💬 Support
+
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/Matbe34/Horizontal-Forecast-Card/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/Matbe34/Horizontal-Forecast-Card/discussions)  
+- 📖 **Documentation**: [Wiki](https://github.com/Matbe34/Horizontal-Forecast-Card/wiki)
+- 💬 **Community**: [Home Assistant Community Forum](https://community.home-assistant.io/)
+
+---
+
+<p align="center">
+  <strong>⭐ If you like this project, please give it a star on GitHub! ⭐</strong>
+</p>

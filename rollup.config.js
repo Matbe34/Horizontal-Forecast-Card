@@ -1,49 +1,50 @@
 import typescript from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import serve from 'rollup-plugin-serve';
-import json from '@rollup/plugin-json';
-import ignore from './rollup-plugins/ignore';
-import { ignoreTextfieldFiles } from './elements/ignore/textfield';
-import { ignoreSelectFiles } from './elements/ignore/select';
-import { ignoreSwitchFiles } from './elements/ignore/switch';
+import resolve from '@rollup/plugin-node-resolve';
 
-const dev = process.env.ROLLUP_WATCH;
-
-const serveopts = {
-  contentBase: ['./dist'],
-  host: '0.0.0.0',
-  port: 5000,
-  allowCrossOrigin: true,
-  headers: {
-    'Access-Control-Allow-Origin': '*',
+export default {
+  input: 'src/horizontal-forecast-card.ts',
+  output: {
+    file: 'dist/horizontal-forecast-card.js',
+    format: 'es',
+    sourcemap: false,
+    banner: '/* Horizontal Forecast Card v1.0.0 - https://github.com/Matbe34/Horizontal-Forecast-Card */',
   },
+  external: ['lit', 'custom-card-helpers'],
+  plugins: [
+    resolve({
+      preferBuiltins: false,
+    }),
+    typescript({
+      typescript: require('typescript'),
+      useTsconfigDeclarationDir: false,
+      tsconfigOverride: {
+        compilerOptions: {
+          declaration: false,
+          declarationMap: false,
+        }
+      }
+    }),
+    babel({
+      exclude: 'node_modules/**',
+      babelHelpers: 'bundled',
+      presets: [
+        ['@babel/preset-env', {
+          targets: {
+            browsers: ['> 1%', 'last 2 versions']
+          }
+        }]
+      ],
+    }),
+    terser({
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+      mangle: {
+        keep_fnames: true,
+      },
+    }),
+  ],
 };
-
-const plugins = [
-  nodeResolve({}),
-  commonjs(),
-  typescript(),
-  json(),
-  babel({
-    exclude: 'node_modules/**',
-  }),
-  dev && serve(serveopts),
-  !dev && terser(),
-  ignore({
-    files: [...ignoreTextfieldFiles, ...ignoreSelectFiles, ...ignoreSwitchFiles].map((file) => require.resolve(file)),
-  }),
-];
-
-export default [
-  {
-    input: 'src/boilerplate-card.ts',
-    output: {
-      dir: 'dist',
-      format: 'es',
-    },
-    plugins: [...plugins],
-  },
-];

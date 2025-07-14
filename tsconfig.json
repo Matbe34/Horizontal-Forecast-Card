@@ -1,21 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2018",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": [
-      "es2017",
-      "dom",
-      "dom.iterable"
-    ],
-    "noEmit": true,
+    "lib": ["es2018", "dom", "dom.iterable"],
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "strict": true,
-    "noImplicitAny": false,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
