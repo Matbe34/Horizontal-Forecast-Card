@@ -1,8 +1,5 @@
 {
   "name": "Horizontal Forecast Card",
   "content_in_root": false,
-  "filename": "horizontal-forecast-card.js",
-  "country": ["US", "CA", "GB", "AU", "DE", "FR", "IT", "ES", "NL", "SE", "NO", "DK", "FI"],
-  "render_readme": true,
-  "iot_class": "Local Polling"
+  "filename": "horizontal-forecast-card.js"
 }
