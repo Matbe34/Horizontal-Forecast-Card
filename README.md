@@ -160,6 +160,19 @@ This card works with any Home Assistant weather entity that provides forecast da
 
 ## 📝 Changelog
 
+### v1.0.2
+- ✅ HACS validation improvements and compliance fixes
+- ✅ Fixed hacs.json configuration for plugin requirements
+- ✅ Added comprehensive documentation (info.md)
+- ✅ Updated build system and dependencies
+- ✅ All HACS validation checks passing
+
+### v1.0.1
+- ✅ Production-ready build optimizations
+- ✅ Enhanced drag-to-scroll functionality
+- ✅ Local SVG icons for better performance
+- ✅ Improved mobile responsiveness
+
 ### v1.0.0
 - ✅ Initial production release
 - ✅ Drag-to-scroll functionality
