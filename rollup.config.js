@@ -9,7 +9,7 @@ export default {
     file: 'dist/horizontal-forecast-card.js',
     format: 'es',
     sourcemap: false,
-    banner: '/* Horizontal Forecast Card v1.0.0 - https://github.com/Matbe34/Horizontal-Forecast-Card */',
+    banner: '/* Horizontal Forecast Card v1.0.1 - https://github.com/Matbe34/Horizontal-Forecast-Card */',
   },
   external: ['lit', 'custom-card-helpers'],
   plugins: [
